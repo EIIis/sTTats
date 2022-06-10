@@ -1,22 +1,33 @@
+
 import json
+'''
+with open('server/user_data.json') as f:
+    userData = j.load(f)
+    print(f)
+'''
+try:
+    userData = open('user_data.json')
+except:
+    print("File doesn't exist")
+else:
+    jsonData = json.load(userData)
+    print("Success!!")
 
-userData = open('server/user_data.json', 'r')
 
-jsonData = json.load(userData)
-"""
+
 # Let's me see how many 
 for dataPoints in jsonData:
     print(dataPoints)
-
+'''
 Activity - Having trouble parsing :/
 Ads and data
 App Settings
-Comment - Comment Counter Done 
+Comment - Comment Counter Done
 Direct Messages
 Profile
 Video
 """
-
+'''
 for info in jsonData['Activity']:
     for second in jsonData['Activity'][info]:
         print (second + 'hi')
